@@ -84,7 +84,8 @@
             <div id="actionButton"></div>
         </div>
     </div>
-    
+
+    <script src="config.js"></script>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const token = urlParams.get('token');
@@ -102,7 +103,7 @@
             actionButton.innerHTML = '<a href="dashboard/index.html" class="btn btn-primary">Go to Login</a>';
         } else {
             // Call verification endpoint
-            fetch(`https://api.pioneersx.store/api/auth/verify-email?token=${token}`)
+            fetch(`${BRAND.apiBase}/auth/verify-email?token=${token}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.success) {

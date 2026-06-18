@@ -36,21 +36,21 @@
         justify-content:space-between !important;
         padding:0 24px !important;
         height:64px !important;
-        flex-direction:row !important; /* LTR order so logo left, links right visually in RTL */
+        flex-direction:row-reverse !important;
       }
-      /* Logo — right side in RTL */
+      /* Logo — right side in RTL page */
       #navbar .brand-logo {
         font-size:20px !important; font-weight:700 !important;
         color:#0c4a6e !important; text-decoration:none !important;
-        white-space:nowrap !important; order:3 !important;
+        white-space:nowrap !important;
         border:none !important; background:none !important; padding:0 !important;
       }
-      /* Links — center */
+      /* Links — on the left side of logo in RTL */
       #navbar .nav-links {
         display:flex !important; align-items:center !important;
         gap:4px !important; list-style:none !important;
         margin:0 !important; padding:0 !important;
-        flex-direction:row !important; order:2 !important;
+        flex-direction:row-reverse !important;
       }
       #navbar .nav-links li { margin:0 !important; padding:0 !important; }
       #navbar .nav-links a {
@@ -59,13 +59,10 @@
         padding:8px 16px !important; border-radius:8px !important;
         transition:all .3s !important; display:block !important;
         border:none !important; background:none !important;
+        box-shadow:none !important;
         font-family:'Cairo',sans-serif !important;
       }
-      #navbar .nav-links a:hover {
-        color:#0c4a6e !important;
-        background:#f0f9ff !important;
-      }
-      /* kill every animation.css nav override */
+      #navbar .nav-links a:hover { color:#0c4a6e !important; background:#f0f9ff !important; }
       #navbar .nav-links a::after,
       #navbar .nav-links a::before { display:none !important; content:none !important; }
       #navbar .nav-links a.active,
@@ -74,19 +71,8 @@
         border:none !important; background:none !important;
         color:#64748b !important; box-shadow:none !important;
       }
-      /* CTA button — left side in RTL */
-      #navbar .nav-cta {
-        background:#0ea5e9 !important; color:#fff !important;
-        padding:9px 22px !important; border-radius:30px !important;
-        text-decoration:none !important; font-size:14px !important;
-        font-weight:600 !important; font-family:'Cairo',sans-serif !important;
-        transition:all .3s !important; white-space:nowrap !important;
-        display:flex !important; align-items:center !important; gap:6px !important;
-        order:1 !important; border:none !important;
-      }
-      #navbar .nav-cta:hover {
-        background:#0284c7 !important; transform:translateY(-1px) !important;
-      }
+      /* Hide CTA completely */
+      #navbar .nav-cta { display:none !important; }
       #navbar .mobile-menu-toggle {
         display:none !important; font-size:1.4rem !important;
         color:#0c4a6e !important; background:none !important;
@@ -97,9 +83,16 @@
       .hero-buttons .btn-primary {
         background:#fff !important; color:#0c4a6e !important;
         border:2px solid #fff !important; box-shadow:0 4px 16px rgba(0,0,0,.15) !important;
+        padding:14px 32px !important; border-radius:30px !important;
+        font-size:16px !important; font-weight:600 !important;
+        font-family:'Cairo',sans-serif !important;
+        text-decoration:none !important; display:inline-flex !important;
+        align-items:center !important; gap:8px !important;
+        cursor:none !important; transition:all .3s !important;
       }
       .hero-buttons .btn-primary:hover {
         background:transparent !important; color:#fff !important;
+        transform:translateY(-2px) !important;
       }
 
       @media(max-width:900px){
@@ -114,7 +107,6 @@
         }
         #navbar .nav-links.open a { color:#0c4a6e !important; }
         #navbar .mobile-menu-toggle { display:block !important; }
-        #navbar .nav-cta { display:none !important; }
       }
     </style>
 </head>
@@ -128,10 +120,6 @@
         <div class="nav-container">
             <a href="#home" class="brand-logo"></a>
             <ul class="nav-links" id="navLinks"></ul>
-            <a href="#contact" class="nav-cta" id="nav-book-btn">
-                <i class="fas fa-calendar-check"></i>
-                <span>احجز موعد</span>
-            </a>
             <button class="mobile-menu-toggle" id="mobileMenu">
                 <i class="fas fa-bars"></i>
             </button>
@@ -342,20 +330,35 @@
         document.getElementById('navLinks').classList.toggle('open');
       });
 
-      // Smooth scroll for all anchor links
+      // Smooth scroll — handles both #features and #section-features
       document.addEventListener('click', function(e){
         const a = e.target.closest('a[href^="#"]');
-        if(!a) return;
+        if (!a) return;
+        const raw = a.getAttribute('href');
+        if (!raw || raw === '#') return;
         e.preventDefault();
-        const t = document.querySelector(a.getAttribute('href'));
-        if(t) t.scrollIntoView({behavior:'smooth'});
+
+        const id = raw.slice(1); // e.g. "features" or "contact"
+
+        // Try direct id first, then with "section-" prefix
+        let target = document.getElementById(id)
+                  || document.getElementById('section-' + id)
+                  || document.querySelector(raw);
+
+        if (target) {
+          const offset = 70; // navbar height
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+
         document.getElementById('navLinks').classList.remove('open');
       });
 
-      // Nav scroll effect
+      // Nav scroll effect + scroll-to-top
       window.addEventListener('scroll', function(){
         document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
-        document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+        const st = document.getElementById('scrollTop');
+        if (st) st.classList.toggle('visible', window.scrollY > 400);
       });
     </script>
 </body>

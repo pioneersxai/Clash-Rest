@@ -1,7 +1,7 @@
 /**
  * ============================================================
- *  BRAND CONFIG — Nile Dental Clinic
- *  عيادة نايل لطب الأسنان
+ *  BRAND CONFIG — Clash Restaurant كلاش
+ *  Burger & Fried Chicken — Sohag, Egypt
  * ============================================================
  */
 
@@ -11,20 +11,20 @@ const BRAND = {
   //  IDENTITY
   // ════════════════════════════════════════════════════════
 
-  name:        "Nile Dental",                                   // Business name — shows in navbar, footer, browser tab
-  tagline:     "ابتسامتك أمانة في أيدي متخصصين",              // Short slogan
-  description: "عيادة نايل لطب الأسنان — رعاية شاملة لأسنانك وابتسامتك بأحدث التقنيات في القاهرة", // Google preview
-  keywords:    "طب أسنان, تقويم, زراعة أسنان, تبييض, فينير, القاهرة, عيادة", // SEO
-  author:      "Nile Dental Clinic",
+  name:        "Clash",
+  tagline:     "كلاش موضوع مختلف",
+  description: "كلاش — برجر وفراخ مقلية بأسلوب مختلف في سوهاج. تجربة أكل لا تنساها",
+  keywords:    "كلاش, برجر, فراخ, سوهاج, مطعم, Clash, burger, sohag",
+  author:      "Clash Restaurant",
 
   // ════════════════════════════════════════════════════════
-  //  THEME — Sky blue & navy medical
+  //  THEME — Black & Orange
   // ════════════════════════════════════════════════════════
 
-  primaryColor:     "#0ea5e9",   // Sky blue
-  primaryColorDark: "#0284c7",   // Darker blue for hovers
-  faviconLetter:    "N",
-  faviconColor:     "%230ea5e9",
+  primaryColor:     "#ff6b00",
+  primaryColorDark: "#e05a00",
+  faviconLetter:    "C",
+  faviconColor:     "%23ff6b00",
 
   // ════════════════════════════════════════════════════════
   //  LANGUAGE
@@ -37,18 +37,18 @@ const BRAND = {
   //  CONTACT
   // ════════════════════════════════════════════════════════
 
-  phone:    "+20 100 000 0000",
-  whatsapp: "201000000000",
-  email:    "info@niledental.com",
-  city:     "١٢ شارع التحرير، الدقي، الجيزة",
-  hours:    "يومياً: ٩:٠٠ ص — ١٠:٠٠ م",
+  phone:    "+20 109 040 7125",
+  whatsapp: "201090407125",
+  email:    "clash@clashsohag.com",
+  city:     "شارع سيتي الرئيسي، سوهاج",
+  hours:    "يومياً: ١٢:٠٠ ظ — ٢:٠٠ ص",
 
   // ════════════════════════════════════════════════════════
   //  API & DOMAIN
   // ════════════════════════════════════════════════════════
 
   apiBase: "",
-  domain:  "https://pioneersxai.github.io/Nile-clinic",
+  domain:  "https://pioneersxai.github.io/Clash-Rest",
 
   // ════════════════════════════════════════════════════════
   //  SOCIAL
@@ -57,23 +57,23 @@ const BRAND = {
   social: {
     twitter:   "",
     linkedin:  "",
-    instagram: "https://www.instagram.com/niledental",
+    instagram: "https://www.instagram.com/clashrestaurant5/",
     youtube:   "",
-    tiktok:    "",
+    tiktok:    "https://www.tiktok.com/@clash57",
   },
 
   // ════════════════════════════════════════════════════════
   //  SECTIONS
   // ════════════════════════════════════════════════════════
 
-  sections: ["hero", "stats", "features", "services", "team", "testimonials", "cta", "contact"],
+  sections: ["hero", "stats", "features", "services", "testimonials", "cta", "contact"],
 
   showAuthButtons: false,
 
   navLinks: [
-    { label: "الرئيسية",   href: "#home" },
-    { label: "خدماتنا",   href: "#section-services" },
-    { label: "أطباؤنا",   href: "#section-team" },
+    { label: "الرئيسية",  href: "#home" },
+    { label: "منيونا",    href: "#section-services" },
+    { label: "عن كلاش",  href: "#section-features" },
     { label: "تواصل معنا", href: "#section-contact" },
   ],
 
@@ -82,14 +82,14 @@ const BRAND = {
   // ════════════════════════════════════════════════════════
 
   hero: {
-    image:       "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1600&q=80",
-    tag:         "معتمدون من نقابة أطباء الأسنان المصرية",
-    title:       "ابتسامتك أمانة في أيدي متخصصين",
-    tagline:     "عيادة نايل — القاهرة",
-    description: "رعاية شاملة لأسنانك وابتسامتك بأحدث التقنيات. من التبييض إلى الزراعة — فريقنا معك في كل خطوة.",
+    image:       "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1600&q=80",
+    tag:         "كلاش موضوع مختلف 🔥",
+    title:       "الأكل اللي بيخليك تتكلم",
+    tagline:     "برجر وفراخ — سوهاج",
+    description: "مش بس أكل — كلاش تجربة. برجر ضخم، فراخ مقلية مقرمشة، وأسلوب مختلف في كل قضمة.",
     buttons: [
-      { text: "احجز كشف مجاني", href: "#contact",  style: "hero-cta", icon: "fas fa-calendar-check" },
-      { text: "واتساب",          href: "whatsapp",  style: "whatsapp", icon: "fab fa-whatsapp" },
+      { text: "اطلب دلوقتي", href: "whatsapp", style: "primary", icon: "fab fa-whatsapp" },
+      { text: "شوف المنيو",  href: "#section-services", style: "secondary" },
     ],
   },
 
@@ -98,110 +98,78 @@ const BRAND = {
   // ════════════════════════════════════════════════════════
 
   stats: [
-    { number: "12+",    label: "سنة خبرة طبية" },
-    { number: "8,000+", label: "مريض راضٍ" },
-    { number: "15",     label: "طبيب متخصص" },
-    { number: "98%",    label: "رضا المرضى" },
+    { number: "3,700+", label: "متابع على إنستغرام" },
+    { number: "٢٠٢٢",   label: "سنة التأسيس" },
+    { number: "١٠٠%",   label: "طازج يومياً" },
+    { number: "٢٤/٧",   label: "تقريباً متاح" },
   ],
 
   // ════════════════════════════════════════════════════════
-  //  FEATURES — Why us cards
+  //  FEATURES
   // ════════════════════════════════════════════════════════
 
   features: {
-    title:    "لماذا عيادة نايل؟",
-    subtitle: "نجمع بين الخبرة الطبية وأحدث التقنيات لنمنحك تجربة علاج مريحة وآمنة",
+    title:    "ليه كلاش؟",
+    subtitle: "لأن الأكل العادي مش إلنا — كلاش موضوع مختلف",
     items: [
-      { icon: "fas fa-microscope",  title: "تقنيات حديثة",     description: "أشعة رقمية وأجهزة ثلاثية الأبعاد لتشخيص دقيق وسريع" },
-      { icon: "fas fa-shield-alt",  title: "معقمة 100%",        description: "بروتوكولات تعقيم طبية معتمدة دولياً في كل جلسة" },
-      { icon: "fas fa-heart",       title: "بيئة مريحة",        description: "ديكور هادئ وفريق ودود يريحك من قلق طبيب الأسنان" },
-      { icon: "fas fa-clock",       title: "مواعيد مرنة",       description: "سبعة أيام في الأسبوع من ٩ صباحاً لـ١٠ مساءً" },
-      { icon: "fas fa-tags",        title: "أسعار شفافة",       description: "خطة علاج مفصّلة بالأسعار قبل بدء أي إجراء" },
-      { icon: "fas fa-camera",      title: "نتائج مضمونة",      description: "قبل وبعد موثّق لكل حالة — نتائجنا تتكلم عنا" },
+      { icon: "fas fa-fire",        title: "طعم لا يُقاوم",      description: "تتبيلة سرية وأسلوب تحضير خاص بيخلي كل قضمة تجربة مختلفة." },
+      { icon: "fas fa-drumstick-bite", title: "فراخ مقرمشة ١٠٠%", description: "فراخ طازجة يومياً، مقلية بالطريقة الصح — برة مقرمشة، جوه طرية." },
+      { icon: "fas fa-hamburger",   title: "برجر ضخم وجامد",     description: "لحمة عالية الجودة، خضار طازج، وصلصات بتجنن — في كل بيتة." },
+      { icon: "fas fa-motorcycle",  title: "توصيل سريع",          description: "أوردر وإنت في بيتك — توصيل سريع لأي مكان في سوهاج." },
+      { icon: "fas fa-tags",        title: "أسعار تنافسية",       description: "أكل جامد بسعر معقول — كلاش مش بيتنازل عن الجودة ولا السعر." },
+      { icon: "fas fa-star",        title: "تجربة مختلفة",        description: "جو مختلف، عرض مختلف، أكل مختلف — كلاش موضوع تاني خالص." },
     ],
   },
 
   // ════════════════════════════════════════════════════════
-  //  SERVICES — with photos from Unsplash
+  //  SERVICES — Menu sections with photos
   // ════════════════════════════════════════════════════════
 
   services: {
-    title:    "خدماتنا",
-    subtitle: "كل ما يحتاجه أسنانك في مكان واحد",
+    title:    "منيونا",
+    subtitle: "كل حاجة بتحبها في مكان واحد",
     items: [
       {
-        image:       "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80",
-        icon:        "fas fa-magic",
-        title:       "تبييض الأسنان",
-        description: "تبييض احترافي بتقنيات Zoom وليزر — نتائج فورية وابتسامة أكثر إشراقاً",
-        features:    ["Zoom Whitening", "تبييض بالليزر", "نتائج فورية", "بدون ألم"],
+        image:       "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80",
+        icon:        "fas fa-hamburger",
+        title:       "البرجر",
+        description: "تشكيلة برجر ضخمة — كلاسيك، دابل، تشيز، وأكتر",
+        features:    ["كلاش كلاسيك", "دابل باتي", "تشيز برجر", "سبايسي برجر"],
       },
       {
-        image:       "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80",
-        icon:        "fas fa-smile-beam",
-        title:       "تقويم الأسنان",
-        description: "تقويم معدني وشفاف وشرائح Invisalign للأطفال والكبار",
-        features:    ["تقويم معدني", "تقويم شفاف", "Invisalign", "للأطفال والكبار"],
+        image:       "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80",
+        icon:        "fas fa-drumstick-bite",
+        title:       "الفراخ المقلية",
+        description: "فراخ مقرمشة بأحسن تتبيلة في سوهاج",
+        features:    ["كريسبي تشيكن", "ستريبس", "باك كوبرا", "وينجز"],
       },
       {
-        image:       "https://images.unsplash.com/photo-1588776814546-1ffbb7b86a7a?w=600&q=80",
-        icon:        "fas fa-tooth",
-        title:       "زراعة الأسنان",
-        description: "زرعات فورية بضمان ٥ سنوات من أطباء زراعة معتمدين دولياً",
-        features:    ["زرعات فورية", "ضمان ٥ سنوات", "أطباء معتمدون", "نتائج دائمة"],
+        image:       "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=80",
+        icon:        "fas fa-utensils",
+        title:       "السايدز",
+        description: "السايدز اللي بتكمل الوجبة",
+        features:    ["فريز", "كول سلو", "موزاريلا ستيكس", "أونيون رينجز"],
       },
       {
-        image:       "https://images.unsplash.com/photo-1571772996211-2f02c9727629?w=600&q=80",
-        icon:        "fas fa-fill-drip",
-        title:       "حشوات وعلاج عصب",
-        description: "حشوات زيركون وخزف ومركب بدون ألم بالتخدير الكامل",
-        features:    ["حشوات زيركون", "حشوات خزف", "علاج عصب", "بدون ألم"],
+        image:       "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=600&q=80",
+        icon:        "fas fa-glass-cheers",
+        title:       "المشروبات",
+        description: "مشروبات باردة تكمل وجبتك",
+        features:    ["عصائر طازجة", "مشروبات غازية", "شيك", "ليموناضة"],
       },
       {
-        image:       "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80",
-        icon:        "fas fa-star",
-        title:       "فينير وابتسامة هوليوودية",
-        description: "قشور خزفية وكمبوزيت للحصول على ابتسامة مثالية كالمشاهير",
-        features:    ["فينير خزفي", "كمبوزيت", "ابتسامة هوليوودية", "نتائج مذهلة"],
+        image:       "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&q=80",
+        icon:        "fas fa-box-open",
+        title:       "الوجبات",
+        description: "وجبات كاملة بسعر أحسن",
+        features:    ["وجبة فردية", "وجبة عيلة", "ميل ديل", "هابي ميل"],
       },
       {
-        image:       "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80",
-        icon:        "fas fa-child",
-        title:       "طب أسنان الأطفال",
-        description: "بيئة صديقة للأطفال وأطباء متخصصون في علاج الأسنان اللبنية",
-        features:    ["بيئة ودية", "أطباء متخصصون", "أسنان لبنية", "بدون خوف"],
-      },
-    ],
-  },
-
-  // ════════════════════════════════════════════════════════
-  //  TEAM — with real Unsplash doctor photos
-  // ════════════════════════════════════════════════════════
-
-  team: {
-    title:    "فريقنا الطبي",
-    subtitle: "أطباء في خدمة ابتسامتك — خبرات دولية وشغف حقيقي",
-    members: [
-      {
-        image:  "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=80",
-        avatar: "أ.س",
-        name:   "د. أحمد السيد",
-        role:   "مؤسس العيادة — استشاري تقويم",
-        bio:    "بكالوريوس طب أسنان القاهرة، دبلوم تقويم من لندن. خبرة ١٢ سنة.",
-      },
-      {
-        image:  "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=500&q=80",
-        avatar: "م.ك",
-        name:   "د. منى كمال",
-        role:   "أخصائية تجميل الأسنان",
-        bio:    "متخصصة في الفينير والابتسامة الهوليوودية. شهادة دولية من إيطاليا.",
-      },
-      {
-        image:  "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&q=80",
-        avatar: "خ.م",
-        name:   "د. خالد محمود",
-        role:   "أخصائي زراعة وجراحة الفم",
-        bio:    "استشاري زراعة الأسنان الفورية. ضمان ٥ سنوات على كل زرعة.",
+        image:       "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80",
+        icon:        "fas fa-fire",
+        title:       "العروض",
+        description: "عروض متغيرة وأوفر ديلز",
+        features:    ["عرض الأسبوع", "كومبو اثنين", "عرض العيلة", "هابي آور"],
       },
     ],
   },
@@ -211,20 +179,20 @@ const BRAND = {
   // ════════════════════════════════════════════════════════
 
   testimonials: {
-    title:    "مرضانا بيتكلموا",
-    subtitle: "٨,٠٠٠+ مريض وثقوا فينا — كلامهم أصدق دليل",
+    title:    "الناس بتقول إيه؟",
+    subtitle: "كلام حقيقي من ناس جربت كلاش",
     items: [
       {
-        text:   "عملت فينير كامل والنتيجة خيالية. الدكتورة منى شرحت كل خطوة وكنت مرتاحة تماماً. أنصح كل الناس بعيادة نايل.",
-        avatar: "س.م", name: "سارة محمود", role: "تبييض وفينير — القاهرة",
+        text:   "والله أحسن برجر جربته في سوهاج خالص. الكرسبي تشيكن عندهم ده بجد موضوع مختلف — مقرمش من بره وطري من جوه. هعود تاني أكيد.",
+        avatar: "م.أ", name: "محمد أحمد", role: "زبون منتظم — سوهاج",
       },
       {
-        text:   "ابني كان خايف من طبيب الأسنان. في عيادة نايل تعامل معاه بشكل رائع وبقى بيجي بكيفه. شكراً على الاحترافية.",
-        avatar: "م.أ", name: "محمد أحمد", role: "علاج أسنان أطفال — الجيزة",
+        text:   "كلاش فعلاً موضوع مختلف زي ما بيقولوا. الأكل جامد، التوصيل سريع، والأسعار كويسة. الدابل باتي برجر ده لحاله يستاهل.",
+        avatar: "ع.م", name: "عمر محمود", role: "زبون — سوهاج",
       },
       {
-        text:   "عملت زراعة ٤ أسنان والنتيجة ماشاء الله. الدكتور خالد محترف جداً والعيادة نظيفة ومريحة والفريق محترم.",
-        avatar: "ه.ع", name: "هالة علي", role: "زراعة أسنان — المهندسين",
+        text:   "اتفرجت على الإنستغرام وقلت هجرب — وبجد متوقعتش يكون بالشكل ده. الباك كوبرا ده نار حرفياً. ينفع تطلب أونلاين وبيجيلك بسرعة.",
+        avatar: "س.ع", name: "سارة علي", role: "زبونة — سوهاج",
       },
     ],
   },
@@ -234,12 +202,12 @@ const BRAND = {
   // ════════════════════════════════════════════════════════
 
   cta: {
-    image:    "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1600&q=80",
-    title:    "ابدأ رحلتك نحو ابتسامة أجمل اليوم",
-    subtitle: "احجز كشفك المجاني الآن — خطة علاج مفصّلة بدون أي التزام",
+    image:    "https://images.unsplash.com/photo-1550547660-d9450f859349?w=1600&q=80",
+    title:    "جعان؟ كلاش موجود",
+    subtitle: "اطلب دلوقتي على واتساب وهيوصلك في أسرع وقت",
     buttons: [
-      { text: "احجز كشف مجاني", href: "#contact", style: "primary", icon: "fas fa-calendar-check" },
-      { text: "واتساب مباشر",   href: "whatsapp", style: "whatsapp", icon: "fab fa-whatsapp" },
+      { text: "اطلب دلوقتي", href: "whatsapp", style: "primary", icon: "fab fa-whatsapp" },
+      { text: "شوف المنيو",  href: "#section-services", style: "secondary" },
     ],
   },
 
@@ -248,18 +216,16 @@ const BRAND = {
   // ════════════════════════════════════════════════════════
 
   contact: {
-    title:           "احجز موعدك",
-    subtitle:        "فريقنا جاهز للرد على أسئلتك وحجز موعدك في أسرع وقت",
-    formTitle:       "احجز موعدك المجاني",
-    formPlaceholder: "أي تفاصيل تساعدنا نجهز لموعدك بشكل أفضل...",
-    formButton:      "احجز موعدي",
+    title:           "اتواصل معانا",
+    subtitle:        "اطلب أو استفسر — إحنا موجودين",
+    formTitle:       "ابعت طلبك أو استفسارك",
+    formPlaceholder: "اكتب طلبك أو استفسارك هنا...",
+    formButton:      "ابعت",
     inquiries: [
-      { value: "checkup",      label: "كشف وفحص عام" },
-      { value: "whitening",    label: "تبييض الأسنان" },
-      { value: "braces",       label: "تقويم الأسنان" },
-      { value: "implant",      label: "زراعة الأسنان" },
-      { value: "veneer",       label: "فينير وتجميل" },
-      { value: "kids",         label: "أسنان الأطفال" },
+      { value: "order",    label: "طلب أكل" },
+      { value: "delivery", label: "استفسار توصيل" },
+      { value: "offer",    label: "عرض أو باقة" },
+      { value: "other",    label: "أخرى" },
     ],
   },
 
@@ -268,25 +234,25 @@ const BRAND = {
   // ════════════════════════════════════════════════════════
 
   footer: {
-    about:     "عيادة نايل لطب الأسنان — رعاية متكاملة لابتسامتك منذ ٢٠١٢. معتمدون من نقابة أطباء الأسنان المصرية.",
-    copyright: `© ${new Date().getFullYear()} Nile Dental Clinic. جميع الحقوق محفوظة.`,
+    about:     "كلاش — برجر وفراخ مقلية بأسلوب مختلف في سوهاج. كلاش موضوع مختلف.",
+    copyright: `© ${new Date().getFullYear()} Clash Restaurant. جميع الحقوق محفوظة.`,
     columns: [
       {
-        title: "خدماتنا",
+        title: "المنيو",
         links: [
-          { label: "تبييض الأسنان",        href: "#services" },
-          { label: "تقويم الأسنان",        href: "#services" },
-          { label: "زراعة الأسنان",        href: "#services" },
-          { label: "فينير وتجميل",         href: "#services" },
+          { label: "البرجر",          href: "#section-services" },
+          { label: "الفراخ المقلية",  href: "#section-services" },
+          { label: "السايدز",         href: "#section-services" },
+          { label: "العروض",          href: "#section-services" },
         ],
       },
       {
         title: "روابط سريعة",
         links: [
           { label: "الرئيسية",   href: "#home" },
-          { label: "أطباؤنا",   href: "#team" },
-          { label: "آراء المرضى", href: "#testimonials" },
-          { label: "احجز موعد", href: "#contact" },
+          { label: "عن كلاش",   href: "#section-features" },
+          { label: "آراء الزباين", href: "#section-testimonials" },
+          { label: "تواصل معنا", href: "#section-contact" },
         ],
       },
     ],
@@ -302,28 +268,29 @@ const BRAND = {
 
   function applyColors() {
     const r = document.documentElement.style;
-    r.setProperty('--primary-red',   BRAND.primaryColor);
-    r.setProperty('--accent',        BRAND.primaryColor);
-    r.setProperty('--espresso',      '#0c4a6e');
-    r.setProperty('--dark-roast',    '#082f49');
-    r.setProperty('--caramel',       BRAND.primaryColor);
-    r.setProperty('--cream',         '#f0f9ff');
-    r.setProperty('--latte',         '#e0f2fe');
-    r.setProperty('--parchment',     '#f8fafc');
-    r.setProperty('--text-on-dark',  '#ffffff');
-    r.setProperty('--text-muted-dark','#94a3b8');
-    r.setProperty('--text-on-light', '#0f172a');
-    r.setProperty('--text-muted-light','#64748b');
-    r.setProperty('--card-dark',     '#0f172a');
-    r.setProperty('--border-dark',   '#1e3a5f');
-    r.setProperty('--border-light',  '#bae6fd');
-    r.setProperty('--border-cream',  '#7dd3fc');
-    r.setProperty('--darker-bg',     '#082f49');
-    r.setProperty('--dark-bg',       '#0c4a6e');
-    r.setProperty('--text-gray',     '#94a3b8');
-    r.setProperty('--card-bg',       '#0f172a');
-    r.setProperty('--border-color',  '#1e3a5f');
-    r.setProperty('--success-green', '#10b981');
+    r.setProperty('--primary-red',      BRAND.primaryColor);
+    r.setProperty('--accent',           BRAND.primaryColor);
+    r.setProperty('--espresso',         '#0f0f0f');
+    r.setProperty('--dark-roast',       '#1a1a1a');
+    r.setProperty('--mocha',            '#222222');
+    r.setProperty('--caramel',          BRAND.primaryColor);
+    r.setProperty('--cream',            '#fff7ed');
+    r.setProperty('--latte',            '#ffedd5');
+    r.setProperty('--parchment',        '#fffbf7');
+    r.setProperty('--text-on-dark',     '#ffffff');
+    r.setProperty('--text-muted-dark',  '#a3a3a3');
+    r.setProperty('--text-on-light',    '#0f0f0f');
+    r.setProperty('--text-muted-light', '#6b7280');
+    r.setProperty('--card-dark',        '#1a1a1a');
+    r.setProperty('--border-dark',      '#2a2a2a');
+    r.setProperty('--border-light',     '#fed7aa');
+    r.setProperty('--border-cream',     '#fdba74');
+    r.setProperty('--darker-bg',        '#0a0a0a');
+    r.setProperty('--dark-bg',          '#0f0f0f');
+    r.setProperty('--text-gray',        '#a3a3a3');
+    r.setProperty('--card-bg',          '#1a1a1a');
+    r.setProperty('--border-color',     '#2a2a2a');
+    r.setProperty('--success-green',    '#25d366');
   }
 
   function applySections() {
@@ -338,7 +305,7 @@ const BRAND = {
   function buildNav() {
     document.querySelectorAll('.brand-logo').forEach(el => el.textContent = BRAND.name);
     const authEl = document.getElementById('nav-auth');
-    if (authEl) authEl.style.display = BRAND.showAuthButtons ? '' : 'none';
+    if (authEl) authEl.style.display = 'none';
     const navEl = document.getElementById('navLinks');
     if (navEl && BRAND.navLinks.length) {
       navEl.innerHTML = BRAND.navLinks.map(l =>
@@ -351,29 +318,27 @@ const BRAND = {
     const heroEl = document.querySelector('.hero');
     if (heroEl && BRAND.hero.image) {
       heroEl.style.backgroundImage = [
-        'linear-gradient(135deg,rgba(12,74,110,0.88) 0%,rgba(14,165,233,0.65) 60%,rgba(12,74,110,0.80) 100%)',
+        'linear-gradient(160deg,rgba(15,15,15,0.90) 0%,rgba(255,107,0,0.35) 50%,rgba(15,15,15,0.92) 100%)',
         `url('${BRAND.hero.image}')`
       ].join(', ');
       heroEl.style.backgroundSize     = 'cover';
       heroEl.style.backgroundPosition = 'center center';
       heroEl.style.backgroundRepeat   = 'no-repeat';
     }
-
-    // Hero tag badge
     const tagEl = document.querySelector('.hero-tag');
-    if (tagEl && BRAND.hero.tag) tagEl.innerHTML = `<i class="fas fa-certificate"></i> ${BRAND.hero.tag}`;
-    else if (tagEl && !BRAND.hero.tag) tagEl.style.display = 'none';
-
+    if (tagEl) {
+      if (BRAND.hero.tag) tagEl.innerHTML = BRAND.hero.tag;
+      else tagEl.style.display = 'none';
+    }
     document.querySelectorAll('.hero-title').forEach(el => el.innerHTML = BRAND.hero.title);
     document.querySelectorAll('.hero-tagline').forEach(el => el.innerHTML = BRAND.hero.tagline);
     document.querySelectorAll('.hero-description').forEach(el => el.innerHTML = BRAND.hero.description);
-
     const btnsEl = document.querySelector('.hero-buttons');
     if (btnsEl) {
       btnsEl.innerHTML = BRAND.hero.buttons.map(b => {
         const href = b.href === 'whatsapp' ? `https://wa.me/${BRAND.whatsapp}` : b.href;
         const icon = b.icon ? `<i class="${b.icon}"></i> ` : '';
-        const cls  = b.style === 'whatsapp' ? 'btn btn-whatsapp' : b.style === 'primary' ? 'btn btn-primary' : b.style === 'hero-cta' ? 'btn btn-hero-cta' : 'btn btn-secondary';
+        const cls  = b.style === 'whatsapp' ? 'btn btn-whatsapp' : b.style === 'primary' ? 'btn btn-primary' : 'btn btn-secondary';
         const tgt  = b.href === 'whatsapp' ? ' target="_blank"' : '';
         return `<a href="${href}" class="${cls}"${tgt}>${icon}${b.text}</a>`;
       }).join('');
@@ -416,31 +381,10 @@ const BRAND = {
         `<div class="service-card fade-in">
           ${s.image ? `<div class="service-card-img"><img src="${s.image}" alt="${s.title}" loading="lazy"></div>` : ''}
           <div class="service-card-body">
-            <span class="service-number"><i class="${s.icon}"></i></span>
             <h3 class="service-title">${s.title}</h3>
             <p class="service-description">${s.description}</p>
             <ul class="service-features">${s.features.map(f => `<li>${f}</li>`).join('')}</ul>
           </div>
-        </div>`
-      ).join('');
-    }
-  }
-
-  function buildTeam() {
-    const sec = document.getElementById('section-team');
-    if (!sec) return;
-    sec.querySelector('.section-title').textContent   = BRAND.team.title;
-    sec.querySelector('.section-subtitle').textContent = BRAND.team.subtitle;
-    const grid = sec.querySelector('.team-grid');
-    if (grid) {
-      grid.innerHTML = BRAND.team.members.map(m =>
-        `<div class="team-card fade-in">
-          ${m.image
-            ? `<div class="team-card-img"><img src="${m.image}" alt="${m.name}" loading="lazy"></div>`
-            : `<div class="team-avatar">${m.avatar}</div>`}
-          <h3 class="team-name">${m.name}</h3>
-          <p class="team-role">${m.role}</p>
-          <p class="team-bio">${m.bio}</p>
         </div>`
       ).join('');
     }
@@ -471,7 +415,7 @@ const BRAND = {
     sec.querySelector('.cta-title').textContent   = BRAND.cta.title;
     sec.querySelector('.cta-subtitle').textContent = BRAND.cta.subtitle;
     if (BRAND.cta.image) {
-      sec.style.backgroundImage      = `linear-gradient(135deg,rgba(12,74,110,0.92),rgba(14,165,233,0.85)),url('${BRAND.cta.image}')`;
+      sec.style.backgroundImage      = `linear-gradient(135deg,rgba(15,15,15,0.90),rgba(255,107,0,0.55)),url('${BRAND.cta.image}')`;
       sec.style.backgroundSize       = 'cover';
       sec.style.backgroundPosition   = 'center';
       sec.style.backgroundAttachment = 'scroll';
@@ -483,7 +427,7 @@ const BRAND = {
       btns.innerHTML = BRAND.cta.buttons.map(b => {
         const href = b.href === 'whatsapp' ? `https://wa.me/${BRAND.whatsapp}` : b.href;
         const icon = b.icon ? `<i class="${b.icon}"></i> ` : '';
-        const cls  = b.style === 'whatsapp' ? 'btn btn-whatsapp' : b.style === 'primary' ? 'btn btn-primary' : b.style === 'hero-cta' ? 'btn btn-hero-cta' : 'btn btn-secondary';
+        const cls  = b.style === 'whatsapp' ? 'btn btn-whatsapp' : b.style === 'primary' ? 'btn btn-primary' : 'btn btn-secondary';
         const tgt  = b.href === 'whatsapp' ? ' target="_blank"' : '';
         return `<a href="${href}" class="${cls}"${tgt}>${icon}${b.text}</a>`;
       }).join('');
@@ -502,8 +446,8 @@ const BRAND = {
     const hours = sec.querySelector('.contact-hours'); if (hours) hours.textContent = BRAND.hours;
     const ft    = sec.querySelector('.form-title'); if (ft) ft.textContent = BRAND.contact.formTitle;
     const sel   = sec.querySelector('#service');
-    if (sel && BRAND.contact.inquiries) {
-      sel.innerHTML = `<option value="">اختر الخدمة المطلوبة</option>` +
+    if (sel) {
+      sel.innerHTML = `<option value="">نوع الطلب</option>` +
         BRAND.contact.inquiries.map(i => `<option value="${i.value}">${i.label}</option>`).join('');
     }
     const ta = sec.querySelector('textarea'); if (ta) ta.placeholder = BRAND.contact.formPlaceholder;
@@ -571,7 +515,6 @@ const BRAND = {
     buildStats();
     buildFeatures();
     buildServices();
-    buildTeam();
     buildTestimonials();
     buildCTA();
     buildContact();

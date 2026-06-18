@@ -18,66 +18,76 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
     <style>
-        /* ── NAV LAYOUT — matches agency site exactly ── */
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            flex-direction: row-reverse;
+      /* ── NAV OVERRIDE — force correct layout ── */
+      #navbar {
+        position:fixed; top:0; width:100%;
+        background:rgba(255,255,255,0.97);
+        backdrop-filter:blur(12px);
+        z-index:1000; padding:15px 0;
+        border-bottom:1px solid #bae6fd;
+        transition:all .3s;
+      }
+      #navbar.scrolled {
+        padding:10px 0;
+        box-shadow:0 2px 20px rgba(14,165,233,0.12);
+      }
+      #navbar .nav-container {
+        max-width:1200px; margin:0 auto;
+        display:flex; justify-content:space-between; align-items:center;
+        padding:0 20px; flex-direction:row-reverse;
+      }
+      #navbar .brand-logo {
+        font-size:20px; font-weight:700;
+        color:#0c4a6e; text-decoration:none;
+      }
+      #navbar .nav-links {
+        display:flex; gap:8px; list-style:none;
+        margin:0; padding:0; flex-direction:row-reverse;
+      }
+      #navbar .nav-links a {
+        color:#64748b; text-decoration:none;
+        font-size:14px; font-weight:500;
+        padding:7px 16px; border-radius:8px;
+        transition:all .3s; display:block;
+        border:1px solid transparent;
+      }
+      #navbar .nav-links a:hover,
+      #navbar .nav-links li:first-child a {
+        color:#0c4a6e;
+        border-color:#0c4a6e;
+      }
+      #navbar .nav-cta {
+        background:#0ea5e9; color:#fff;
+        padding:9px 22px; border-radius:30px;
+        text-decoration:none; font-size:14px; font-weight:600;
+        transition:all .3s; white-space:nowrap;
+        display:flex; align-items:center; gap:6px;
+      }
+      #navbar .nav-cta:hover { background:#0284c7; transform:translateY(-1px); }
+      #navbar .mobile-menu-toggle { display:none; font-size:1.4rem; color:#0c4a6e; background:none; border:none; }
+
+      /* ── HERO BUTTONS override ── */
+      .hero-buttons .btn-primary {
+        background:#fff !important; color:#0c4a6e !important;
+        border:2px solid #fff !important;
+      }
+      .hero-buttons .btn-primary:hover {
+        background:transparent !important; color:#fff !important;
+      }
+
+      @media(max-width:992px){
+        #navbar .nav-links { display:none; }
+        #navbar .nav-links.open {
+          display:flex; flex-direction:column;
+          position:absolute; top:65px; right:16px; left:16px;
+          background:#fff; border-radius:16px;
+          padding:16px; box-shadow:0 8px 32px rgba(0,0,0,.1);
+          border:1px solid #bae6fd; gap:4px;
         }
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            flex-direction: row-reverse;
-        }
-        .nav-links a {
-            color: var(--text-muted, #64748b);
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            padding: 6px 14px;
-            border-radius: 8px;
-            transition: all .3s;
-        }
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--navy, #0c4a6e);
-            background: var(--lighter, #e0f2fe);
-        }
-        .nav-links a::after { display: none !important; }
-        .nav-cta-btn {
-            background: var(--blue, #0ea5e9);
-            color: #fff !important;
-            padding: 10px 22px !important;
-            border-radius: 30px !important;
-            font-weight: 600 !important;
-            font-size: 14px !important;
-        }
-        .nav-cta-btn:hover {
-            background: var(--blue-dark, #0284c7) !important;
-            color: #fff !important;
-        }
-        .nav-auth-buttons { display: flex; gap: 10px; align-items: center; }
-        @media(max-width:992px) {
-            .nav-links { display: none !important; }
-            .nav-links.active {
-                display: flex !important;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                right: 20px;
-                background: #fff;
-                padding: 16px 24px;
-                border-radius: 16px;
-                box-shadow: 0 8px 32px rgba(0,0,0,.12);
-                z-index: 999;
-                min-width: 200px;
-            }
-        }
+        #navbar .nav-links.open a { color:#0c4a6e; border-color:transparent; }
+        #navbar .mobile-menu-toggle { display:block; }
+        #navbar .nav-cta { display:none; }
+      }
     </style>
 </head>
 <body>
@@ -88,13 +98,15 @@
     <!-- NAVBAR -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo brand-logo"></a>
+            <a href="#home" class="brand-logo"></a>
             <ul class="nav-links" id="navLinks"></ul>
-            <div class="nav-auth-buttons" id="nav-auth">
-                <a href="./dashboard/register.html" class="btn-nav-signup">إنشاء حساب</a>
-                <a href="./dashboard/index.html" class="btn-nav-login">تسجيل الدخول</a>
-            </div>
-            <div class="mobile-menu-toggle" id="mobileMenu"><i class="fas fa-bars"></i></div>
+            <a href="#contact" class="nav-cta" id="nav-book-btn">
+                <i class="fas fa-calendar-check"></i>
+                <span>احجز موعد</span>
+            </a>
+            <button class="mobile-menu-toggle" id="mobileMenu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
@@ -245,7 +257,7 @@
                     </div>
                 </div>
                 <form class="contact-form fade-in" id="contactForm">
-                    <h3 class="form-title" style="margin-bottom:30px"></h3>
+                    <h3 class="form-title" style="margin-bottom:28px;color:#0c4a6e;font-size:1.4rem;font-weight:700;"></h3>
                     <div class="form-group"><label>الاسم الكامل *</label><input type="text" name="name" required></div>
                     <div class="form-group"><label>البريد الإلكتروني *</label><input type="email" name="email" required></div>
                     <div class="form-group"><label>رقم الهاتف *</label><input type="tel" name="phone" required></div>
@@ -253,7 +265,7 @@
                         <select id="service" name="service"></select>
                     </div>
                     <div class="form-group"><label>رسالتك *</label><textarea name="message" required></textarea></div>
-                    <button type="submit" class="btn btn-primary" style="width:100%"></button>
+                    <button type="submit" class="btn btn-primary" style="width:100%;background:#0ea5e9;color:#fff;border:none;padding:15px;border-radius:30px;font-size:1rem;font-weight:600;font-family:inherit;transition:all .3s;"></button>
                 </form>
             </div>
         </div>
@@ -279,10 +291,10 @@
             <div class="footer-dynamic-cols"></div>
             <div class="footer-section">
                 <h3>تواصل معنا</h3>
-                <p><i class="fas fa-envelope"></i> <a class="footer-contact-email" href="#"></a></p>
-                <p><i class="fas fa-phone"></i> <span class="footer-contact-phone"></span></p>
-                <p><i class="fab fa-whatsapp"></i> <a class="footer-contact-wa" href="#"></a></p>
-                <p><i class="fas fa-map-marker-alt"></i> <span class="footer-contact-city"></span></p>
+                <p><i class="fas fa-envelope" style="color:#0ea5e9;margin-left:6px"></i> <a class="footer-contact-email" href="#" style="color:rgba(255,255,255,.5);text-decoration:none"></a></p>
+                <p><i class="fas fa-phone" style="color:#0ea5e9;margin-left:6px"></i> <span class="footer-contact-phone" style="color:rgba(255,255,255,.5)"></span></p>
+                <p><i class="fab fa-whatsapp" style="color:#25d366;margin-left:6px"></i> <a class="footer-contact-wa" href="#" style="color:rgba(255,255,255,.5);text-decoration:none"></a></p>
+                <p><i class="fas fa-map-marker-alt" style="color:#0ea5e9;margin-left:6px"></i> <span class="footer-contact-city" style="color:rgba(255,255,255,.5)"></span></p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -297,25 +309,26 @@
     <script src="js/animations.js"></script>
     <script src="js/cursor.js"></script>
     <script>
-        // Mobile menu toggle
-        document.getElementById('mobileMenu').addEventListener('click', function() {
-            const nl = document.getElementById('navLinks');
-            nl.classList.toggle('active');
-        });
+      // Mobile menu toggle
+      document.getElementById('mobileMenu').addEventListener('click', function(){
+        document.getElementById('navLinks').classList.toggle('open');
+      });
 
-        // Highlight active nav link on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section[id]');
-            const links = document.querySelectorAll('.nav-links a');
-            let current = '';
-            sections.forEach(s => {
-                if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
-            });
-            links.forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-            });
-        });
+      // Smooth scroll for all anchor links
+      document.addEventListener('click', function(e){
+        const a = e.target.closest('a[href^="#"]');
+        if(!a) return;
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if(t) t.scrollIntoView({behavior:'smooth'});
+        document.getElementById('navLinks').classList.remove('open');
+      });
+
+      // Nav scroll effect
+      window.addEventListener('scroll', function(){
+        document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+        document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+      });
     </script>
 </body>
 </html>

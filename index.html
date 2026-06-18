@@ -18,12 +18,66 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
     <style>
-        .nav-container{display:flex;justify-content:space-between;align-items:center;width:100%}
-        .nav-links{display:flex;gap:25px;list-style:none;margin:0;padding:0}
-        .nav-auth-buttons{display:flex;gap:10px;align-items:center}
-        .btn-nav-login{padding:8px 20px;border:1px solid rgba(255,255,255,0.3);border-radius:8px;color:#fff;text-decoration:none;font-size:.9rem;transition:all .3s}
-        .btn-nav-signup{padding:8px 20px;background:var(--primary-red);border-radius:8px;color:#fff;text-decoration:none;font-size:.9rem;font-weight:600;transition:all .3s}
-        @media(max-width:992px){.nav-links{display:none!important}.nav-links.active{display:flex!important;flex-direction:column}}
+        /* ── NAV LAYOUT — matches agency site exactly ── */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            flex-direction: row-reverse;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex-direction: row-reverse;
+        }
+        .nav-links a {
+            color: var(--text-muted, #64748b);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 8px;
+            transition: all .3s;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--navy, #0c4a6e);
+            background: var(--lighter, #e0f2fe);
+        }
+        .nav-links a::after { display: none !important; }
+        .nav-cta-btn {
+            background: var(--blue, #0ea5e9);
+            color: #fff !important;
+            padding: 10px 22px !important;
+            border-radius: 30px !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+        }
+        .nav-cta-btn:hover {
+            background: var(--blue-dark, #0284c7) !important;
+            color: #fff !important;
+        }
+        .nav-auth-buttons { display: flex; gap: 10px; align-items: center; }
+        @media(max-width:992px) {
+            .nav-links { display: none !important; }
+            .nav-links.active {
+                display: flex !important;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                background: #fff;
+                padding: 16px 24px;
+                border-radius: 16px;
+                box-shadow: 0 8px 32px rgba(0,0,0,.12);
+                z-index: 999;
+                min-width: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -191,12 +245,12 @@
                     </div>
                 </div>
                 <form class="contact-form fade-in" id="contactForm">
-                    <h3 class="form-title" style="margin-bottom:30px;color:var(--text-white)"></h3>
+                    <h3 class="form-title" style="margin-bottom:30px"></h3>
                     <div class="form-group"><label>الاسم الكامل *</label><input type="text" name="name" required></div>
                     <div class="form-group"><label>البريد الإلكتروني *</label><input type="email" name="email" required></div>
                     <div class="form-group"><label>رقم الهاتف *</label><input type="tel" name="phone" required></div>
                     <div class="form-group"><label>نوع الاستفسار</label>
-                        <select id="service" name="service" style="width:100%;padding:15px;background:var(--darker-bg);border:1px solid var(--border-color);border-radius:8px;color:var(--text-white);font-size:1rem;font-family:inherit"></select>
+                        <select id="service" name="service"></select>
                     </div>
                     <div class="form-group"><label>رسالتك *</label><textarea name="message" required></textarea></div>
                     <button type="submit" class="btn btn-primary" style="width:100%"></button>
@@ -242,5 +296,26 @@
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/cursor.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenu').addEventListener('click', function() {
+            const nl = document.getElementById('navLinks');
+            nl.classList.toggle('active');
+        });
+
+        // Highlight active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const links = document.querySelectorAll('.nav-links a');
+            let current = '';
+            sections.forEach(s => {
+                if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+            });
+            links.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
